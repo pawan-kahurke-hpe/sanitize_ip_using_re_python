@@ -17,8 +17,7 @@ import re
 ```
 The re module is imported to use regular expressions for identifying and replacing sensitive data patterns in the log file.
 Defining Regex Patterns
-python
-Copy code
+
 # Define regex patterns for IP addresses and hostnames
 ```python
 IP_PATTERN = re.compile(r'(\d{1,3}\.){3}\d{1,3}')
@@ -51,7 +50,7 @@ Sanitizing Data: Replaces all IP addresses with the placeholder <IP_ADDRESS> and
 Writing the Output File: Writes the sanitized data to the output file.
 Completion Message: Prints a message indicating that the sanitization is complete and specifies the output file path.
 De-sanitization Function
-python
+```python
 Copy code
 def desanitize(input_file, output_file, original_data_file):
     with open(original_data_file, 'r') as file:
@@ -76,6 +75,7 @@ def desanitize(input_file, output_file, original_data_file):
         file.write(desanitized_data)
     
     print("De-sanitization complete. Original data written to:", output_file)
+```
 Function Definition: desanitize(input_file, output_file, original_data_file) - Takes three parameters: the path to the sanitized log file, the path to the output de-sanitized file, and the path to the original log file.
 Reading Original Data: Opens and reads the content of the original log file.
 Reading Sanitized Data: Opens and reads the content of the sanitized log file.
