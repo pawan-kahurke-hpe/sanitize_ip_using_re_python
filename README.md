@@ -25,7 +25,8 @@ HOSTNAME_PATTERN = re.compile(r'\b[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,
 ```
 IP_PATTERN is a compiled regular expression that matches IPv4 addresses (e.g., 192.168.1.10).
 HOSTNAME_PATTERN is a compiled regular expression that matches domain names (e.g., server.example.com).
-Sanitization Function
+
+# Sanitization Function
 ```python
 def sanitize(input_file, output_file):
     with open(input_file, 'r') as file:
@@ -49,9 +50,8 @@ Reading the Input File: Opens and reads the content of the input log file.
 Sanitizing Data: Replaces all IP addresses with the placeholder <IP_ADDRESS> and all hostnames with the placeholder <HOSTNAME>.
 Writing the Output File: Writes the sanitized data to the output file.
 Completion Message: Prints a message indicating that the sanitization is complete and specifies the output file path.
-De-sanitization Function
+# De-sanitization Function
 ```python
-Copy code
 def desanitize(input_file, output_file, original_data_file):
     with open(original_data_file, 'r') as file:
         original_data = file.read()
