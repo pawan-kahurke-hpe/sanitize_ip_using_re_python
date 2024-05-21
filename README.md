@@ -84,7 +84,7 @@ Writing the Output File: Writes the de-sanitized data to the output file.
 Completion Message: Prints a message indicating that the de-sanitization is complete and specifies the output file path.
 Example Usage
 python
-Copy code
+
 # Input log file with sensitive data
 input_log_file = 'logfile.txt'
 # Output log file with sanitized data
@@ -102,7 +102,7 @@ Sanitization: Calls the sanitize function to sanitize the sensitive data in the 
 De-sanitization: Calls the desanitize function to revert the placeholders in the sanitized log file back to the original sensitive data and save the result to the de-sanitized log file.
 Sample Log File (logfile.txt)
 plaintext
-Copy code
+
 2024-05-20 10:15:30 Connection from 192.168.1.10 to server.example.com
 2024-05-20 10:16:00 Connection from 172.16.0.5 to database.example.org
 2024-05-20 10:17:45 User login from 10.0.0.2 to app.example.net
@@ -113,8 +113,8 @@ Save the Python Script: Save the provided Python script to a file named sanitize
 
 Execute the Script: Run the script using Python:
 
-bash
-Copy code
+```bash
+
 python sanitize_logs.py
 Check the Output Files:
 
