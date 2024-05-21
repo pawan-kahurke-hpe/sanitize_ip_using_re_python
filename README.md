@@ -1,5 +1,4 @@
-markdown
-Copy code
+
 # Log File Sanitization and De-sanitization Script
 
 ## Overview
@@ -15,6 +14,7 @@ This script provides functionality to sanitize sensitive data (such as IP addres
 
 ```python
 import re
+```
 The re module is imported to use regular expressions for identifying and replacing sensitive data patterns in the log file.
 Defining Regex Patterns
 python
