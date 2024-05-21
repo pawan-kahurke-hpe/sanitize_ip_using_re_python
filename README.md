@@ -20,13 +20,14 @@ Defining Regex Patterns
 python
 Copy code
 # Define regex patterns for IP addresses and hostnames
+```python
 IP_PATTERN = re.compile(r'(\d{1,3}\.){3}\d{1,3}')
 HOSTNAME_PATTERN = re.compile(r'\b[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}\b')
+```
 IP_PATTERN is a compiled regular expression that matches IPv4 addresses (e.g., 192.168.1.10).
 HOSTNAME_PATTERN is a compiled regular expression that matches domain names (e.g., server.example.com).
 Sanitization Function
-python
-Copy code
+```python
 def sanitize(input_file, output_file):
     with open(input_file, 'r') as file:
         log_data = file.read()
@@ -43,6 +44,7 @@ def sanitize(input_file, output_file):
         file.write(sanitized_data)
     
     print("Sanitization complete. Sanitized data written to:", output_file)
+```
 Function Definition: sanitize(input_file, output_file) - Takes two parameters: the path to the input log file and the path to the output sanitized file.
 Reading the Input File: Opens and reads the content of the input log file.
 Sanitizing Data: Replaces all IP addresses with the placeholder <IP_ADDRESS> and all hostnames with the placeholder <HOSTNAME>.
