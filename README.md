@@ -1,4 +1,5 @@
-
+markdown
+Copy code
 # Log File Sanitization and De-sanitization Script
 
 ## Overview
@@ -16,14 +17,16 @@ This script provides functionality to sanitize sensitive data (such as IP addres
 import re
 The re module is imported to use regular expressions for identifying and replacing sensitive data patterns in the log file.
 Defining Regex Patterns
-
+python
+Copy code
 # Define regex patterns for IP addresses and hostnames
 IP_PATTERN = re.compile(r'(\d{1,3}\.){3}\d{1,3}')
 HOSTNAME_PATTERN = re.compile(r'\b[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}\b')
 IP_PATTERN is a compiled regular expression that matches IPv4 addresses (e.g., 192.168.1.10).
 HOSTNAME_PATTERN is a compiled regular expression that matches domain names (e.g., server.example.com).
 Sanitization Function
-
+python
+Copy code
 def sanitize(input_file, output_file):
     with open(input_file, 'r') as file:
         log_data = file.read()
@@ -46,7 +49,8 @@ Sanitizing Data: Replaces all IP addresses with the placeholder <IP_ADDRESS> and
 Writing the Output File: Writes the sanitized data to the output file.
 Completion Message: Prints a message indicating that the sanitization is complete and specifies the output file path.
 De-sanitization Function
-
+python
+Copy code
 def desanitize(input_file, output_file, original_data_file):
     with open(original_data_file, 'r') as file:
         original_data = file.read()
@@ -77,7 +81,8 @@ Reverting Placeholders: Replaces the placeholders <IP_ADDRESS> and <HOSTNAME> in
 Writing the Output File: Writes the de-sanitized data to the output file.
 Completion Message: Prints a message indicating that the de-sanitization is complete and specifies the output file path.
 Example Usage
-
+python
+Copy code
 # Input log file with sensitive data
 input_log_file = 'logfile.txt'
 # Output log file with sanitized data
@@ -106,10 +111,10 @@ Save the Python Script: Save the provided Python script to a file named sanitize
 
 Execute the Script: Run the script using Python:
 
-
+bash
+Copy code
 python sanitize_logs.py
 Check the Output Files:
 
 Sanitized File (sanitized_logfile.txt): This file will contain the sanitized log data with IP addresses and hostnames replaced by placeholders.
 De-sanitized File (desanitized_logfile.txt): This file will contain the original log data restored from the sanitized file.
-By following this documentation, you can effectively use the script to sanitize and de-sanitize sensitive data in log files. Adjust the regex patterns and placeholders as needed to fit your specific requirements.
